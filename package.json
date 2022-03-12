@@ -14,7 +14,6 @@
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
     "@mui/material": "latest",
-    "@mui/styles": "^5.5.0",
     "@remix-run/react": "latest",
     "@remix-run/serve": "latest",
     "react": "latest",
