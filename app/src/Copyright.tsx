@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import * as React from 'react'
+import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
 
 export default function Copyright() {
   return (
@@ -11,5 +11,5 @@ export default function Copyright() {
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
-  );
+  )
 }

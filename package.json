@@ -16,6 +16,7 @@
     "@mui/material": "latest",
     "@remix-run/react": "latest",
     "@remix-run/serve": "latest",
+    "@sendgrid/mail": "^7.6.2",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.3.1",

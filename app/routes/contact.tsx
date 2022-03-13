@@ -4,6 +4,7 @@ import { Link } from 'remix'
 import Typography from '@mui/material/Typography'
 import { Box, Container } from '@mui/material'
 import ContactForm from '~/src/components/ContactForm'
+import sendEmail, { SendEmailArgs } from '~/src/utils/sendEmail'
 
 // https://remix.run/api/conventions#meta
 export const meta: MetaFunction = () => {
@@ -15,8 +16,8 @@ export const meta: MetaFunction = () => {
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData()
-  console.log('\n', `formData = `, formData, '\n')
   const name = formData.get('poop')
+
   // get all formData values
   const values: {
     [key: string]: string
@@ -27,9 +28,15 @@ export const action: ActionFunction = async ({ request }) => {
     }
   }
 
-  console.log('\n', `values = `, values, '\n')
-
-  return { response: 'success' }
+  try {
+    // wait 1.5 seconds
+    await new Promise(resolve => setTimeout(resolve, 1500))
+    // await sendEmail(values as SendEmailArgs)
+    return { response: 'success' }
+  } catch (error) {
+    console.log('\n', `error = `, error, '\n')
+    return { response: 'error' }
+  }
 }
 
 // https://remix.run/guides/routing#index-routes
@@ -37,15 +44,10 @@ export default function Index() {
   return (
     <Box maxWidth={600} pt={2}>
       <Typography variant="h4" component="h1" gutterBottom>
-        Remix with TypeScript example
+        Email Form Proof of Concept
       </Typography>
 
       <ContactForm />
-
-      <Typography variant="h5" component="h1" gutterBottom mt={2}>
-        This select input is outside the contact form but still provides its value by virtue of the <code>form</code>{' '}
-        prop.
-      </Typography>
     </Box>
   )
 }
