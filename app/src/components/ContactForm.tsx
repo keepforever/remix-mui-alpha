@@ -16,6 +16,8 @@ export default function ContactForm() {
   const autocompleteRef = useRef<HTMLInputElement>(null)
   const isSubmitting = transition.state === 'submitting' && transition.submission.formData.get('_action') === 'create'
 
+  console.log('\n', `transition = `, transition, '\n')
+
   useEffect(() => {
     if (!isSubmitting) {
       // reset form values
@@ -74,7 +76,7 @@ export default function ContactForm() {
         </fieldset>
         <Box mt={2}>
           <Button name="_action" value="create" type="submit" variant="contained" color="primary" fullWidth>
-            Submit
+            Submit Foo
           </Button>
         </Box>
       </Form>
