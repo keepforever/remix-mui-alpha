@@ -75,7 +75,17 @@ export default function ContactForm() {
           />
         </fieldset>
         <Box mt={2}>
-          <Button name="_action" value="create" type="submit" variant="contained" color="primary" fullWidth>
+          <Button
+            sx={{
+              background: ({ palette }) => palette.primary.darker,
+            }}
+            name="_action"
+            value="create"
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+          >
             Submit Foo
           </Button>
         </Box>
