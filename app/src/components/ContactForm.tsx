@@ -16,7 +16,11 @@ export default function ContactForm() {
   const autocompleteRef = useRef<HTMLInputElement>(null)
   const isSubmitting = transition.state === 'submitting' && transition.submission.formData.get('_action') === 'create'
 
+  console.group(`ContactForm.tsx`)
   console.log('\n', `transition = `, transition, '\n')
+  console.log('\n', `actionData = `, actionData, '\n')
+
+  console.groupEnd()
 
   useEffect(() => {
     if (!isSubmitting) {
@@ -76,14 +80,14 @@ export default function ContactForm() {
         </fieldset>
         <Box mt={2}>
           <Button
-            sx={{
-              background: ({ palette }) => palette.primary.darker,
-            }}
+            // sx={{
+            //   background: ({ palette }) => palette.primary.darker,
+            // }}
             name="_action"
             value="create"
             type="submit"
             variant="contained"
-            color="primary"
+            color="neutral"
             fullWidth
           >
             Submit Foo

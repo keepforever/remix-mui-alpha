@@ -29,6 +29,13 @@ declare module '@mui/material/styles' {
   }
 }
 
+// Update the Button's color prop options
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    neutral: true
+  }
+}
+
 // Create a theme instance.
 const theme = createTheme({
   status: {

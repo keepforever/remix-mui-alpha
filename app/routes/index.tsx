@@ -14,6 +14,7 @@ export const meta: MetaFunction = () => {
 }
 
 export const action: ActionFunction = async ({ request }) => {
+  await new Promise(resolve => setTimeout(resolve, 3000))
   const formData = await request.formData()
   console.log('\n', `formData = `, formData, '\n')
   const name = formData.get('poop')
