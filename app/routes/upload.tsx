@@ -42,8 +42,9 @@ export default function Index() {
   const [objectUrl, setObjectUrl] = useState<any>(null)
 
   const preview = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const frameElement = document.getElementById('preview-img') as HTMLImageElement
-    const myObjectUrl = URL.createObjectURL(event?.target?.files?.[0] as any)
+    // const frameElement = document.getElementById('preview-img') as HTMLImageElement
+    const fileList = event.target.files as FileList
+    const myObjectUrl = URL.createObjectURL(fileList?.[0] as File)
 
     setObjectUrl(myObjectUrl)
   }
